@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     #local
     'users',
     'pages',
+    'articles',
 ]
 
 MIDDLEWARE = [
@@ -110,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tehran'
 
 USE_I18N = True
 
@@ -127,5 +128,10 @@ AUTH_USER_MODEL = 'users.CustomUser'
 LOGIN_REDIRECT_URL = 'home'
 LOGPUT_REDIRECT_URL = 'home'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-EMAIL_BACKEND ='django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND ='django.core.mail.backends.smtp.EMAIL_BACKEND'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'sharpblade95'
+EMAIL_HOST_USER = 'testpass1'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
